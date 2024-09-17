@@ -14,3 +14,8 @@ pandas
 matplotlib
 statistics
 
+## Results:
+Table showing scraped data: Man_Utd_records.xlsx
+![Screenshot 2024-09-17 125406](https://github.com/user-attachments/assets/28610dc9-1758-4639-8e7d-8530dc62a397)
+Optional table produced
+
