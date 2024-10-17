@@ -76,7 +76,7 @@ else:
 
 
 print("The most frequently listed nation is ", statistics.mode(NationList))
-print("The average number of appearances in the top 25 for", club_name.replace("-", " ").title(), "is: ", statistics.mean(AppsList))
+print("The average number of appearances in the top 25 for", club_name.replace("-", " ").title(), "is: ", round(statistics.mean(AppsList)))
 
 max_apps = max(AppsList)
 top_apps_player = PlayerList[AppsList.index(max_apps)]
