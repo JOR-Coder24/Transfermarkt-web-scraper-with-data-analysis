@@ -68,7 +68,7 @@ final_df.to_excel("Man_Utd_records.xlsx", index=False)
 
 print("Data saved to 'Man_Utd_records.xlsx' successfully.")
 print("The most frequently listed nation is ", statistics.mode(NationList))
-print("The average number of appearances in the top 25 for Man Utd is: ", statistics.mean(AppsList))
+print("The average number of appearances in the top 25 for Man Utd is: ", round(statistics.mean(AppsList)))
 
 max_apps = max(AppsList)
 top_apps_player = PlayerList[AppsList.index(max_apps)]
