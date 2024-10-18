@@ -10,7 +10,7 @@ headers = {
 }
 
 # Define URL
-club_name = input("Enter the club name (use '-' for spaces, e.g., manchester-united): ").strip()
+club_name = input("Enter the club name: ").strip()
 club_id = input("Enter the club's unique Transfermarkt ID (e.g., 985 for Manchester United): ").strip()
 
 # Define URL using club_name and club_id
@@ -67,7 +67,7 @@ final_df = pd.DataFrame({
     "Assists": AssistsList
 })
 
-tablesave=input("Do you want to save the data to a excel spreadsheet? y/n")
+tablesave=input("Do you want to save the data to a excel spreadsheet? (y/n) :")
 if tablesave == "y":
     final_df.to_excel(f"{club_name}_records.xlsx", index=False)
     print(f"Data saved to '{club_name}_records.xlsx' successfully.")
@@ -84,11 +84,11 @@ print(f"The player with most appearances is", {top_apps_player}," with", {max_ap
 
 max_goals = max(GoalsList)
 top_goals_player = PlayerList[GoalsList.index(max_goals)]
-print(f"The all time top scorer is", {top_goals_player}, "with", {max_goals})
+print(f"The top scorer of the 25 is", {top_goals_player}, "with", {max_goals})
 
 max_assists = max(AssistsList)
 top_assists_player = PlayerList[AssistsList.index(max_assists)]
-print(f"The all time top assister is:", {top_assists_player}, "with", {max_assists})
+print(f"The top assister of the 25 is:", {top_assists_player}, "with", {max_assists})
 
 graphplot=input("Do you want to display a graph? y/n")
 if graphplot=="y":
