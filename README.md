@@ -1,25 +1,70 @@
-# Transfermarkt_record_holders_data
-Script to extract data on the record holders for a club. Creates a table and graph for top appearances, goals and assists and provides additional stats
+# Transfermarkt Player Statistics Scraper
 
-This Python script scrapes data from the Transfermarkt website for the top 25 record-holding players of Manchester United. The data collected includes player names, nationalities, appearances, goals, and assists. The script saves this data to an Excel file and provides statistical insights, such as the most frequent nationality and the average number of appearances. Additionally, it offers the option to visualise the data in a graph.
+This Python script allows users to extract and analyze player statistics (appearances, goals, assists) from the Transfermarkt website for a specific football club. The script fetches data from a club's record players page, processes it, and provides insights on player statistics. Additionally, the data can be saved to an Excel spreadsheet, and the script offers the option to display a graph of the players' statistics.
 
-UPDATE-User_Input_Scraper.py This allows the user to input a club of their choice to get the stats. They need to enter the club name and the club's Transfermarkt ID number. I added a list of IDs for testing. 
+## Requirements
 
-## Requirements:
+- Python 3.x
+- `requests` library
+- `beautifulsoup4` library
+- `pandas` library
+- `matplotlib` library
 
-Python 3.x
+To install the required libraries, you can use pip:
 
-Required Python libraries:
-requests
-beautifulsoup4
-pandas
-matplotlib
-statistics
+```bash
+pip install requests beautifulsoup4 pandas matplotlib
+```
 
-## Results:
-Table showing scraped data: Man_Utd_records.xlsx
+## How to Use
 
-Optional Graph produced:
-![Screenshot 2024-09-17 125406](https://github.com/user-attachments/assets/28610dc9-1758-4639-8e7d-8530dc62a397)
+1. **Input Club Name and ID:**
+   When prompted, enter the club name (e.g., "manchester-united") and the club's unique Transfermarkt ID (e.g., 985 for Manchester United). These inputs will be used to construct the URL for the club's record players page.
 
+2. **Data Extraction:**
+   The script will scrape data for the following statistics:
+   - Player Name
+   - Nationality
+   - Appearances
+   - Goals
+   - Assists
 
+3. **Save Data (Optional):**
+   After the data is scraped, you will be asked if you'd like to save the data to an Excel file. If you choose "y," the data will be saved in a file named `<club_name>_records.xlsx`.
+
+4. **Analysis:**
+   The script will provide the following insights:
+   - The most frequently listed nationality.
+   - The average number of appearances for the top 25 players.
+   - The player with the most appearances.
+   - The top scorer in the list.
+   - The player with the most assists.
+
+5. **Graph Plot (Optional):**
+   After the analysis, you will be prompted if you want to display a graph comparing players' appearances, goals, and assists. If you choose "y," a line plot will be shown.
+
+## Example Output
+
+```
+Enter the club name: manchester-united
+Enter the club's unique Transfermarkt ID (e.g., 985 for Manchester United): 985
+Do you want to save the data to an excel spreadsheet? (y/n) : y
+Data saved to 'manchester-united_records.xlsx' successfully.
+The most frequently listed nation is England
+The average number of appearances in the top 25 for Manchester United is: 218
+The player with most appearances is: Ryan Giggs with 802
+The top scorer of the 25 is: Wayne Rooney with 253
+The top assister of the 25 is: Ryan Giggs with 162
+Do you want to display a graph? y/n y
+```
+
+## Notes
+
+- The script is designed to scrape the "Record Players" page for a given club, which includes a list of players and their statistics.
+- Data can be saved to an Excel file for further analysis.
+- The graph displays the players' statistics (Appearances, Goals, and Assists) on the same plot for comparison.
+
+## Limitations
+
+- The script only supports clubs listed on Transfermarkt.
+- It assumes the data structure on the Transfermarkt page remains the same. If the website's layout changes, the script may need to be updated.
